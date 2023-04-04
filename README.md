@@ -1,6 +1,6 @@
 # DIGIMAP Image Colorization
 
-Access the web application via [digimap-image-colorization-group6.streamlit.app/](https://digimap-image-colorization-group6.streamlit.app/)
+Access the web application via [digimap-image-colorization-group6.streamlit.app](https://digimap-image-colorization-group6.streamlit.app/)
 
 ### How to Run Locally
 
