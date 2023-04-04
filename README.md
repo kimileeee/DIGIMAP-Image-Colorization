@@ -2,7 +2,7 @@
 
 ### How to Run Locally
 
-Install the OpenCV and Streamlit
+Install OpenCV and Streamlit
 
 ```
 pip install opencv-python
