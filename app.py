@@ -3,7 +3,6 @@ import streamlit as st          # for creating the web app
 import cv2                      # for image processing
 from PIL import Image
 import numpy as np
-import os
 
 def colorize_image(image):
     image_input_arr = np.asarray(image)
