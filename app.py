@@ -1,7 +1,7 @@
-from io import StringIO
+from io import BytesIO
 import streamlit as st          # for creating the web app
 import cv2                      # for image processing
-from PIL import Image, ImageEnhance
+from PIL import Image
 import numpy as np
 import os
 
@@ -14,6 +14,13 @@ def colorize_image(image):
 
     return image_output
 
+def img_to_bytes(image):
+    buffer = BytesIO()
+    image.save(buffer, format="jpeg")
+    image_output_bytes = buffer.getvalue()
+
+    return image_output_bytes
+
 def main():
     st.title("Image Colorization")
     st.text("sumthing text to add")
@@ -21,25 +28,40 @@ def main():
     # add file uploader for input
     uploaded_file = st.file_uploader("Upload", type=['jpg','png','jpeg'])
 
-    # add BEFORE and AFTER columns
     if uploaded_file is not None:
         image_input = Image.open(uploaded_file)
+        filename = uploaded_file.name.split(".")
 
         col1, col2 = st.columns([0.5, 0.5])
+        btn_colorize = ""
+        placeholder_img_file = Image.open("placeholder.png").resize((image_input.width, image_input.height))
+        placeholder_img = ""
+        placeholder_btn  = ""
+
+        # Before Column
         with col1:
             st.markdown('<p style="text-align: center;">Before</p>',unsafe_allow_html=True)
             st.image(image_input, width=300)
+            btn_colorize = st.button('Colorize')
 
+        # After Column
         with col2:
             st.markdown('<p style="text-align: center;">After</p>',unsafe_allow_html=True)
+            placeholder_img = st.empty()          
+            placeholder_img.image(placeholder_img_file, width=300)
+            placeholder_btn = st.empty()
+            placeholder_btn.button(label='Download Image', disabled=True)
 
-        cola, colb, colc = st.columns([0.33, 0.34, 0.33])
-        if colb.button('Colorize'):
+        # Colorize Button
+        if btn_colorize:
             image_output = colorize_image(image_input)
-            with col2:
-                st.image(image_output, width=300)
-
-        # TO DO: output image downloadable
+            placeholder_img.image(image_output, width=300)
+            placeholder_btn.download_button(label='Download Image', 
+                                            data=img_to_bytes(image_output),
+                                            file_name=filename[0]+"-colored.jpg",
+                                            mime="image/jpeg", 
+                                            disabled=False)
+                
 
 if __name__ == "__main__":
     main()
