@@ -1,9 +1,13 @@
 # DIGIMAP-Image_Colorization
 
-### Dependencies
-
-
 ### How to Run Locally
+
+Install the OpenCV and Streamlit
+
+```
+pip install opencv-python
+pip install streamlit
+```
 
 Open terminal or command line at root folder and run:
 
