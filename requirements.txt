@@ -1,4 +1,4 @@
 numpy==1.22.0
-opencv_python==4.6.0.66
+opencv-python-rolling==4.7.0.20230211
 Pillow==9.5.0
 streamlit==1.20.0
