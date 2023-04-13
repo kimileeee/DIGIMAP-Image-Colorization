@@ -1,0 +1,10 @@
+
+.idea/DIGIMAP-Image-Colorization.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+Model/colorization_release_v2.caffemodel
+Model/pts_in_hull.npy
+Model/colorization_deploy_v2.prototxt
