@@ -9,7 +9,7 @@ def colorize_image(image):
     # --------Get current working directory--------#
     cwd = os.getcwd()
     # --------Model file paths--------#
-    proto_file = os.path.join(cwd, 'Model', 'colorization_deploy_v2.prototxt')
+    proto_file = os.path.join(cwd, 'Model', 'colorization_deploy_v2.prototxt.txt')
     model_file = os.path.join(cwd, 'Model', 'colorization_release_v2.caffemodel')
     hull_pts = os.path.join(cwd, 'Model', 'pts_in_hull.npy')
     # --------------#--------------#
