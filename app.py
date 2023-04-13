@@ -6,9 +6,9 @@ import numpy as np
 
 def colorize_image(image):
     # --------Model file paths--------#
-    proto_file = './Model/colorization_deploy_v2.prototxt'
-    model_file = './Model/colorization_release_v2.caffemodel'
-    hull_pts = './Model/pts_in_hull.npy'
+    proto_file = '/Model/colorization_deploy_v2.prototxt'
+    model_file = '/Model/colorization_release_v2.caffemodel'
+    hull_pts = '/Model/pts_in_hull.npy'
     # --------------#--------------#
 
     # --------Reading the model params--------#
