@@ -10,7 +10,6 @@ Install OpenCV and Streamlit
 pip install opencv-python
 pip install streamlit
 ```
-Download the files in ```download_link.txt``` and place it in the Model folder.
 
 Open terminal or command line at root folder and run:
 
