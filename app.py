@@ -74,7 +74,7 @@ def img_to_bytes(image):
 
 def main():
     st.title("Image Colorization")
-    st.text("sumthing text to add")
+    st.text("A simple web app that colorizes black-and-white images")
 
     # add file uploader for input
     uploaded_file = st.file_uploader("Upload", type=['jpg','png','jpeg'])
