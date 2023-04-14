@@ -6,12 +6,11 @@ import numpy as np
 import os
 
 def colorize_image(image):
-    # --------Get current working directory--------#
-    cwd = os.getcwd()
+
     # --------Model file paths--------#
-    proto_file = os.path.join(cwd,  'Model\colorization_deploy_v2.prototxt')
-    model_file = os.path.join(cwd, 'Model\colorization_release_v2.caffemodel')
-    hull_pts = os.path.join(cwd, 'Model\pts_in_hull.npy')
+    proto_file = 'Model\colorization_deploy_v2.prototxt'
+    model_file = 'Model\colorization_release_v2.caffemodel'
+    hull_pts = 'Model\pts_in_hull.npy'
     # --------------#--------------#
 
     # --------Reading the model params--------#
