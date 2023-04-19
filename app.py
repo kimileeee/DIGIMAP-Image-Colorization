@@ -20,7 +20,7 @@ def colorize_image(image):
     # -----Reading and preprocessing image--------#
     img = np.asarray(image)
     scaled = img.astype("float32") / 255.0
-    lab_img = cv2.cvtColor(scaled, cv2.COLOR_BGR2LAB)
+    lab_img = cv2.cvtColor(scaled, cv2.COLOR_RGB2LAB)
     # -----------------------------------#---------------------#
 
     # add the cluster centers as 1x1 convolutions to the model
@@ -53,7 +53,7 @@ def colorize_image(image):
     colorized = np.concatenate((L[:, :, np.newaxis], ab_channel), axis=2)
 
     # Then convert the image from Lab to BGR
-    colorized = cv2.cvtColor(colorized, cv2.COLOR_LAB2BGR)
+    colorized = cv2.cvtColor(colorized, cv2.COLOR_LAB2RGB)
     colorized = np.clip(colorized, 0, 1)
 
     # change the image to 0-255 range and convert it from float32 to int
